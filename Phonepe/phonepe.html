@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment UI</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="paymentContainer">
+    <button class="btn" onclick="simulatePayment('accepted')">Accept Payment</button>
+    <button class="btn" onclick="simulatePayment('rejected')">Reject Payment</button>
+
+    <div id="processing" class="processing">
+        <h2>Processing Payment...</h2>
+    </div>
+
+    <div id="success" class="success">
+        <h2>Payment Successful</h2>
+        <p>Thank you for using PhonePe</p>
+    </div>
+
+    <div id="failure" class="failure">
+        <h2>Payment Failed</h2>
+        <p>Please try again</p>
+    </div>
+</div>
+
+<script src="./payment.js">
+    
+</script>
+
+</body>
+</html>

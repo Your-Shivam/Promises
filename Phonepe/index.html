@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        margin: 10px;
+    }
+
+    #paymentContainer {
+        text-align: center;
+    }
+
+    
+    #processing, #success, #failure {
+        display: none;
+    }
+
+    #processing img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .success, .failure, .processing {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+
+    .success {
+        background-color: #e6f7ec;
+        border-color: #52c41a;
+        color: #52c41a;
+    }
+
+    .failure {
+        background-color: #fff1f0;
+        border-color: #f5222d;
+        color: #f5222d;
+    }
+</style>
+</head>
+<body>
+    
+<title>Payment UI</title>
+</head>
+<body>
+
+<div id="paymentContainer">
+    <button onclick="simulatePayment('accepted')">Accept Payment</button>
+    <button onclick="simulatePayment('rejected')">Reject Payment</button>
+
+    <div id="processing" class="processing">
+        
+        <h2>Processing Payment...</h2>
+    </div>
+
+    <div id="success" class="success">
+        <h2>Payment Successful</h2>
+        <p>Thank you for using PhonePe</p>
+    </div>
+
+    <div id="failure" class="failure">
+        <h2>Payment Failed</h2>
+        <p>Please try again</p>
+    </div>
+</div>
+
+<script>
+    function simulatePayment(status) {
+        showProcessingUI();
+
+        setTimeout(function () {
+            if (status === 'accepted') {
+                showSuccessUI();
+            } else {
+                showFailureUI();
+            }
+        }, 2000); 
+    }
+
+    function showProcessingUI() {
+        hideAllUI();
+        document.getElementById('processing').style.display = 'block';
+    }
+
+    function showSuccessUI() {
+        hideAllUI();
+        document.getElementById('success').style.display = 'block';
+    }
+
+    function showFailureUI() {
+        hideAllUI();
+        document.getElementById('failure').style.display = 'block';
+    }
+
+    function hideAllUI() {
+        document.getElementById('processing').style.display = 'none';
+        document.getElementById('success').style.display = 'none';
+        document.getElementById('failure').style.display = 'none';
+    }
+</script>
+    
+</body>
+</html>

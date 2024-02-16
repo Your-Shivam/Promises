@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin: 10px;
+    background-image: url("https://wallpapercave.com/wp/wp6257053.jpg");
+    background-size: 100%;
+}
+
+.btn{
+    padding: 10px;
+    border-radius: 6px;
+    margin-left: 40px;
+}
+
+#paymentContainer {
+    text-align: center;
+}
+
+#processing, #success, #failure {
+    display: none;
+}
+
+#processing img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.success, .failure, .processing {
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.success {
+    background-color: white;
+    border-color: rgb(6, 254, 6);
+    color: rgb(6, 254, 6);
+}
+
+.failure {
+    background-color: white;
+    border-color: red;
+    color: red;
+}
